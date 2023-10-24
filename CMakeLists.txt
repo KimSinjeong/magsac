@@ -52,22 +52,22 @@ endif()
 # ==============================================================================
 # Find GLOG
 # ==============================================================================
-find_package(Glog REQUIRED)
-if(NOT Glog_FOUND)
-	message(FATAL_ERROR "Glog not found.")
-else()
-	message("Glog library found.")
-endif()
+# find_package(Glog REQUIRED)
+# if(NOT Glog_FOUND)
+# 	message(FATAL_ERROR "Glog not found.")
+# else()
+# 	message("Glog library found.")
+# endif()
 
-if(IS_MSVC)
-    # Some fixes for the Glog library.
-    add_definitions("-DGLOG_NO_ABBREVIATED_SEVERITIES")
-    add_definitions("-DGL_GLEXT_PROTOTYPES")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
-    # Enable object level parallel builds in Visual Studio.
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
-endif()
+# if(IS_MSVC)
+#     # Some fixes for the Glog library.
+#     add_definitions("-DGLOG_NO_ABBREVIATED_SEVERITIES")
+#     add_definitions("-DGL_GLEXT_PROTOTYPES")
+#     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
+#     # Enable object level parallel builds in Visual Studio.
+#     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
+#     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+# endif()
 
 
 # ==============================================================================
